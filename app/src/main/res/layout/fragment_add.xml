@@ -27,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Balance"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@+id/addNombres_et"
         tools:layout_editor_absoluteX="99dp" />
 
