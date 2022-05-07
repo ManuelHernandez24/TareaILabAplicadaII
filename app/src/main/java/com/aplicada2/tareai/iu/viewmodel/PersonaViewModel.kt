@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class PersonaViewModel(application : Application): AndroidViewModel(application) {
-    private val readAllData: LiveData<List<Persona>>
+    val readAllData: LiveData<List<Persona>>
     private val repository: PersonaRepository
 
     init{
