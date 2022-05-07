@@ -31,4 +31,16 @@ class PersonaViewModel(application : Application): AndroidViewModel(application)
             repository.updatePersona(persona)
         }
     }
+
+    fun deletePersona(persona: Persona){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deletePersona(persona)
+        }
+    }
+
+    fun deleteAllPersona(){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteAllPersona()
+        }
+    }
 }

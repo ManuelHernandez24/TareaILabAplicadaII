@@ -1,10 +1,10 @@
 package com.aplicada2.tareai.fragments.list
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.aplicada2.tareai.R
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -44,9 +44,36 @@ class ListFragment : Fragment() {
             findNavController().navigate(R.id.action_listFragment_to_addFragment)
         }
 
+        //Menu para eliminar todas las personas registradas
+        setHasOptionsMenu(true)
 
         return view
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item.itemId==R.id.menu_delete) {
+            deleteAllPersona()
+        }
+        return super.onOptionsItemSelected(item)
+
+    }
+
+    private fun deleteAllPersona() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Sí"){_,_ ->
+            mPersonaView.deleteAllPersona()
+            Toast.makeText(requireContext(), "Se ha eliminado todo correctamente.", Toast.LENGTH_SHORT).show()
+        }
+        builder.setPositiveButton("No"){_,_ ->
+
+        }
+        builder.setTitle("Estás a punto de eliminar todos los registros")
+        builder.setMessage("Estás seguro?")
+        builder.create().show()
+    }
 }

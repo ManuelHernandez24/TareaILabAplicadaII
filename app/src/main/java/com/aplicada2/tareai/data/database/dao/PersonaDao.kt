@@ -12,6 +12,13 @@ interface PersonaDao {
     @Update
     suspend fun updatePersona(persona: Persona)
 
+    @Delete
+    suspend fun deletePersona(persona: Persona)
+
+    @Query("DELETE FROM tabla_persona")
+    suspend fun deleteAllPersona()
+
     @Query("SELECT * FROM TABLA_PERSONA ORDER BY PersonaId ASC")
     fun readAllData(): LiveData<List<Persona>>
+
 }
