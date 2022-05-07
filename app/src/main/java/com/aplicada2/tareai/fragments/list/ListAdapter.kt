@@ -3,10 +3,14 @@ package com.aplicada2.tareai.fragments.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.aplicada2.tareai.R
 import com.aplicada2.tareai.data.database.entities.Persona
 import kotlinx.android.synthetic.main.custon_row.view.*
+
+
+
 
 class ListAdapter:RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
@@ -35,6 +39,11 @@ class ListAdapter:RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.id_txt.text = currentItem.PersonaId.toString()
         holder.itemView.nombres_txt.text = currentItem.Nombres
         holder.itemView.balance_txt.text = concat(currentItem.Balance.toString(), "$")
+
+        holder.itemView.rowLayout.setOnClickListener{
+            val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
+            holder.itemView.findNavController().navigate(action)
+        }
     }
 
     fun setData(persona: List<Persona>){

@@ -12,4 +12,8 @@ class PersonaRepository(private  val personaDao: PersonaDao) {
         personaDao.addPersona(persona)
     }
 
+    suspend fun updatePersona(persona: Persona){
+        personaDao.updatePersona(persona)
+    }
+
 }

@@ -25,4 +25,10 @@ class PersonaViewModel(application : Application): AndroidViewModel(application)
             repository.addPersona(persona)
         }
     }
+
+    fun updatePersona(persona: Persona){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updatePersona(persona)
+        }
+    }
 }
