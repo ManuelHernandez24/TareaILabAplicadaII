@@ -69,7 +69,7 @@ class ListFragment : Fragment() {
             mPersonaView.deleteAllPersona()
             Toast.makeText(requireContext(), "Se ha eliminado todo correctamente.", Toast.LENGTH_SHORT).show()
         }
-        builder.setPositiveButton("No"){_,_ ->
+        builder.setNegativeButton("No"){_,_ ->
 
         }
         builder.setTitle("Estás a punto de eliminar todos los registros")

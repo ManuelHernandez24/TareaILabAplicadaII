@@ -86,7 +86,7 @@ class UpdateFragment : Fragment() {
             Toast.makeText(requireContext(), "${args.currentPersona.Nombres} ha sido eliminado correctamente", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
-        builder.setPositiveButton("No"){_,_ ->
+        builder.setNegativeButton("No"){_,_ ->
 
         }
         builder.setTitle("Estás a punto de elimar a ${args.currentPersona.Nombres}?")
