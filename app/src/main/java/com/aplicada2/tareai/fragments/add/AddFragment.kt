@@ -47,12 +47,12 @@ class AddFragment : Fragment() {
 
             //Se manda a la baase de datos
             mPersonaViewModel.addPersona((persona))
-            Toast.makeText(requireContext(),"Se agregó perfectamente.", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(),getString(R.string.AgregarSinErrores), Toast.LENGTH_LONG).show()
 
             //Ir atras
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
         }else{
-            Toast.makeText(requireContext(),"No se puede dejar campos vacio", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(),getString(R.string.AgregarConErrores), Toast.LENGTH_LONG).show()
         }
     }
 

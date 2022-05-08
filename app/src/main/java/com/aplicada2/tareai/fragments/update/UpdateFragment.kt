@@ -14,6 +14,7 @@ import androidx.navigation.fragment.navArgs
 import com.aplicada2.tareai.R
 import com.aplicada2.tareai.data.database.entities.Persona
 import com.aplicada2.tareai.iu.viewmodel.PersonaViewModel
+import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
 
@@ -42,8 +43,6 @@ class UpdateFragment : Fragment() {
         //Poner el menu de eliminar
         setHasOptionsMenu(true)
 
-
-
         return view
     }
 
@@ -56,11 +55,11 @@ class UpdateFragment : Fragment() {
             val updatePersona = Persona(args.currentPersona.PersonaId, nombres, balance)
             //Update current persona
             mPersonaViewModel.updatePersona(updatePersona)
-            Toast.makeText(requireContext(), "Se actualizó correctamente", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.ActualizarSinErrores), Toast.LENGTH_SHORT).show()
             //Ir atras
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }else{
-            Toast.makeText(requireContext(), "No puede dejar campos vacios.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.ActualizarConErrores), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -81,16 +80,16 @@ class UpdateFragment : Fragment() {
 
     private fun deletePersona() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setPositiveButton("Sí"){_,_ ->
+        builder.setPositiveButton(R.string.Si){_,_ ->
             mPersonaViewModel.deletePersona(args.currentPersona)
-            Toast.makeText(requireContext(), "${args.currentPersona.Nombres} ha sido eliminado correctamente", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "${args.currentPersona.Nombres} ${R.string.EliminadoConExito}", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
-        builder.setNegativeButton("No"){_,_ ->
+        builder.setNegativeButton(R.string.No){_,_ ->
 
         }
-        builder.setTitle("Estás a punto de elimar a ${args.currentPersona.Nombres}?")
-        builder.setMessage("Estás seguro de que quieres eliminar a ${args.currentPersona.Nombres}")
+        builder.setTitle("${R.string.TituloMensajeEliminar} ${args.currentPersona.Nombres}?")
+        builder.setMessage("${R.string.MensajeConfirmacionEliminar}${args.currentPersona.Nombres}")
         builder.create().show()
     }
 }

@@ -2,4 +2,20 @@
     <string name="app_name">TareaI</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_nombres">Nombres</string>
+    <string name="txt_balance">Balance</string>
+    <string name="btn_add">Añadir</string>
+    <string name="btn_update">Actualizar</string>
+    <string name="AgregarSinErrores">Se agregó perfectamente.</string>
+    <string name="AgregarConErrores">No se puede dejar campos vacio</string>
+    <string name="Si">Sí</string>
+    <string name="No">No</string>
+    <string name="EliminarSinErrores">Se ha eliminado todo correctamente.</string>
+    <string name="TituloEliminarTodo">Estás a punto de eliminar todos los registros</string>
+    <string name="MensajeEliminarTodo">Estás seguro?</string>
+    <string name="ActualizarSinErrores">Se actualizó correctamente</string>
+    <string name="ActualizarConErrores">No puede dejar campos vacios.</string>
+    <string name="EliminadoConExito">ha sido eliminado correctamente.</string>
+    <string name="TituloMensajeEliminar">Estás a punto de elimar a </string>
+    <string name="MensajeConfirmacionEliminar">Estás seguro de que quieres eliminar a </string>
 </resources>

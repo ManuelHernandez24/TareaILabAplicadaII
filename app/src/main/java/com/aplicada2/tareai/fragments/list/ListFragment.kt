@@ -65,15 +65,15 @@ class ListFragment : Fragment() {
 
     private fun deleteAllPersona() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setPositiveButton("Sí"){_,_ ->
+        builder.setPositiveButton(getString(R.string.Si)){ _, _ ->
             mPersonaView.deleteAllPersona()
-            Toast.makeText(requireContext(), "Se ha eliminado todo correctamente.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.EliminarSinErrores), Toast.LENGTH_SHORT).show()
         }
-        builder.setNegativeButton("No"){_,_ ->
+        builder.setNegativeButton(getString(R.string.No)){ _, _ ->
 
         }
-        builder.setTitle("Estás a punto de eliminar todos los registros")
-        builder.setMessage("Estás seguro?")
+        builder.setTitle(getString(R.string.TituloEliminarTodo))
+        builder.setMessage(getString(R.string.MensajeEliminarTodo))
         builder.create().show()
     }
 }
