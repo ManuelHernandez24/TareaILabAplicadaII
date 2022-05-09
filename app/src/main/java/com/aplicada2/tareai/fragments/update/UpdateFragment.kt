@@ -88,8 +88,9 @@ class UpdateFragment : Fragment() {
         builder.setNegativeButton(R.string.No){_,_ ->
 
         }
-        builder.setTitle("${R.string.TituloMensajeEliminar} ${args.currentPersona.Nombres}?")
-        builder.setMessage("${R.string.MensajeConfirmacionEliminar}${args.currentPersona.Nombres}")
+        val title : String = ("Eliminar a ${args.currentPersona.Nombres}?")
+        builder.setTitle("${title}")
+        builder.setMessage("Estás seguro?")
         builder.create().show()
     }
 }
