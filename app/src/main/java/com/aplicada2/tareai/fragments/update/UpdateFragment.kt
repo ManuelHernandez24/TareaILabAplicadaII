@@ -47,10 +47,12 @@ class UpdateFragment : Fragment() {
     }
 
     private fun updateItem(){
-        val nombres = updateNombres_et.text.toString()
-        val balance = (updateBalance_et.text.toString()).toDouble()
 
-        if(inputCheck(nombres,updateBalance_et.text)){
+
+       // if(inputCheck(nombres,updateBalance_et.text)){
+        if(updateNombres_et.text.toString().length > 2 && updateBalance_et.text.toString().length > 0){
+            val nombres = updateNombres_et.text.toString()
+            val balance = (updateBalance_et.text.toString()).toDouble()
             //Se crea la persona
             val updatePersona = Persona(args.currentPersona.PersonaId, nombres, balance)
             //Update current persona

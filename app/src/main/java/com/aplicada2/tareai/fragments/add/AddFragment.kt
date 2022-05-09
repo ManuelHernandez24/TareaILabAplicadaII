@@ -15,6 +15,7 @@ import com.aplicada2.tareai.data.database.entities.Persona
 import com.aplicada2.tareai.iu.viewmodel.PersonaViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
+import kotlinx.android.synthetic.main.fragment_update.*
 
 
 class AddFragment : Fragment() {
@@ -37,11 +38,10 @@ class AddFragment : Fragment() {
     }
 
     private fun insertDataToDatabase() {
-        val nombres = addNombres_et.text.toString()
-        val balance = addBalance_et.text
 
-
-        if(inputCheck(nombres, balance)){
+        if(addNombres_et.text.toString().length > 2 && addBalance_et.text.toString().length > 0){
+            val nombres = addNombres_et.text.toString()
+            val balance = (addBalance_et.text.toString()).toDouble()
             //Se crea la persona
             val persona = Persona(0, nombres, (balance.toString()).toDouble())
 
