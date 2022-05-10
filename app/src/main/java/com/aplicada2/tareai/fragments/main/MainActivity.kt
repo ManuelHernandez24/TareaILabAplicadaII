@@ -1,9 +1,10 @@
-package com.aplicada2.tareai
+package com.aplicada2.tareai.fragments.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.aplicada2.tareai.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
