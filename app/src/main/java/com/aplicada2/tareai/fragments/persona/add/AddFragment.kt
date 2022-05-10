@@ -38,11 +38,19 @@ class AddFragment : Fragment() {
 
     private fun insertDataToDatabase() {
 
-        if(addNombres_et.text.toString().length > 2 && addBalance_et.text.toString().length > 0){
+        if(
+            addNombres_et.text.toString().length > 2 &&
+            addBalance_et.text.toString().length > 0 &&
+            addEmail_et.text.toString().length > 5 &&
+            addOcupacion_et.text.toString().length > 0
+        ){
             val nombres = addNombres_et.text.toString()
+            val email = addEmail_et.text.toString()
+            val ocupacionId = addOcupacion_et.text.toString()
             val balance = (addBalance_et.text.toString()).toDouble()
+
             //Se crea la persona
-            val persona = Persona(0, nombres, (balance.toString()).toDouble())
+            val persona = Persona(0, nombres, email, Integer.parseInt(ocupacionId), (balance.toString()).toDouble())
 
             //Se manda a la baase de datos
             mPersonaViewModel.addPersona((persona))
@@ -53,9 +61,5 @@ class AddFragment : Fragment() {
         }else{
             Toast.makeText(requireContext(),getString(R.string.AgregarConErrores), Toast.LENGTH_LONG).show()
         }
-    }
-
-    private fun inputCheck(nombres: String, balance:Editable): Boolean{
-        return !(TextUtils.isEmpty(nombres) && balance.isEmpty())
     }
 }

@@ -13,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.aplicada2.tareai.R
 import com.aplicada2.tareai.data.database.entities.Persona
 import com.aplicada2.tareai.iu.viewmodel.PersonaViewModel
+import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
 
@@ -33,6 +34,8 @@ class UpdateFragment : Fragment() {
         mPersonaViewModel = ViewModelProvider(this).get(PersonaViewModel::class.java)
 
         view.updateNombres_et.setText(args.currentPersona.Nombres)
+        view.updateEmail_et.setText(args.currentPersona.Email)
+        view.updateOcupacion_et.setText(args.currentPersona.OcupacionId.toString())
         view.updateBalance_et.setText(args.currentPersona.Balance.toString())
 
         view.update_btn.setOnClickListener{
@@ -47,12 +50,18 @@ class UpdateFragment : Fragment() {
     private fun updateItem(){
 
 
-       // if(inputCheck(nombres,updateBalance_et.text)){
-        if(updateNombres_et.text.toString().length > 2 && updateBalance_et.text.toString().length > 0){
+        if(
+            updateNombres_et.text.toString().length > 2 &&
+            updateBalance_et.text.toString().length > 0 &&
+            updateEmail_et.text.toString().length > 5 &&
+            updateOcupacion_et.text.toString().length > 0
+        ){
             val nombres = updateNombres_et.text.toString()
+            val email = updateEmail_et.text.toString()
+            val ocupacionId = updateOcupacion_et.text.toString()
             val balance = (updateBalance_et.text.toString()).toDouble()
             //Se crea la persona
-            val updatePersona = Persona(args.currentPersona.PersonaId, nombres, balance)
+            val updatePersona = Persona(args.currentPersona.PersonaId, nombres, email, Integer.parseInt(ocupacionId), (balance.toString()).toDouble())
             //Update current persona
             mPersonaViewModel.updatePersona(updatePersona)
             Toast.makeText(requireContext(), getString(R.string.ActualizarSinErrores), Toast.LENGTH_SHORT).show()
