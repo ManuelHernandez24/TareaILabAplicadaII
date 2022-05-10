@@ -1,4 +1,4 @@
-package com.aplicada2.tareai.fragments.add
+package com.aplicada2.tareai.fragments.persona.add
 
 import android.os.Bundle
 import android.text.Editable
@@ -15,7 +15,6 @@ import com.aplicada2.tareai.data.database.entities.Persona
 import com.aplicada2.tareai.iu.viewmodel.PersonaViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
-import kotlinx.android.synthetic.main.fragment_update.*
 
 
 class AddFragment : Fragment() {

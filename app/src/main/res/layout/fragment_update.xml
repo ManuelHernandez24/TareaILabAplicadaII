@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.update.UpdateFragment"
+    tools:context=".fragments.persona.update.UpdateFragment"
     android:padding="24dp"
     >
 
@@ -12,12 +12,34 @@
         android:id="@+id/updateNombres_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
         android:hint="@string/txt_nombres"
         android:inputType="textPersonName"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="100dp" />
+
+    <EditText
+        android:id="@+id/updateEmail_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/txt_email"
+        android:inputType="textWebEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/updateNombres_et"
+        tools:layout_editor_absoluteX="99dp" />
+
+    <EditText
+        android:id="@+id/updateOcupacion_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/txt_ocupacion"
+        android:inputType="textWebEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/updateEmail_et"
+        tools:layout_editor_absoluteX="99dp" />
 
     <EditText
         android:id="@+id/updateBalance_et"
@@ -27,7 +49,7 @@
         android:ems="10"
         android:hint="@string/txt_balance"
         android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/updateNombres_et"
+        app:layout_constraintTop_toBottomOf="@+id/updateOcupacion_et"
         tools:layout_editor_absoluteX="99dp" />
 
     <Button
@@ -38,5 +60,5 @@
         android:text="@string/btn_update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateBalance_et" />
+        app:layout_constraintTop_toBottomOf="@+id/updateOcupacion_et" />
 </androidx.constraintlayout.widget.ConstraintLayout>

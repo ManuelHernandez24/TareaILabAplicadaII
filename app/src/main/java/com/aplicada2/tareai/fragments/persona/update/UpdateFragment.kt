@@ -1,7 +1,6 @@
-package com.aplicada2.tareai.fragments.update
+package com.aplicada2.tareai.fragments.persona.update
 
 import android.app.AlertDialog
-import android.hardware.camera2.TotalCaptureResult
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -14,7 +13,6 @@ import androidx.navigation.fragment.navArgs
 import com.aplicada2.tareai.R
 import com.aplicada2.tareai.data.database.entities.Persona
 import com.aplicada2.tareai.iu.viewmodel.PersonaViewModel
-import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
 

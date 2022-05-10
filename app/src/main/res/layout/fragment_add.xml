@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.add.AddFragment"
+    tools:context=".fragments.persona.add.AddFragment"
     android:padding="24dp">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,12 +13,34 @@
         android:id="@+id/addNombres_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
         android:hint="@string/txt_nombres"
         android:inputType="textPersonName"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="100dp" />
+
+    <EditText
+        android:id="@+id/addEmail_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/txt_email"
+        android:inputType="textWebEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/addNombres_et"
+        tools:layout_editor_absoluteX="99dp" />
+
+    <EditText
+        android:id="@+id/addOcupacion_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/txt_ocupacion"
+        android:inputType="textWebEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/addEmail_et"
+        tools:layout_editor_absoluteX="99dp" />
 
     <EditText
         android:id="@+id/addBalance_et"
@@ -28,7 +50,7 @@
         android:ems="10"
         android:hint="@string/txt_balance"
         android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/addNombres_et"
+        app:layout_constraintTop_toBottomOf="@+id/addOcupacion_et"
         tools:layout_editor_absoluteX="99dp" />
 
     <Button
@@ -39,6 +61,6 @@
         android:text="@string/btn_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addBalance_et" />
+        app:layout_constraintTop_toBottomOf="@+id/addOcupacion_et" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.aplicada2.tareai.fragments.list
+package com.aplicada2.tareai.fragments.persona.list
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -10,7 +10,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.aplicada2.tareai.data.database.entities.Persona
 import com.aplicada2.tareai.iu.viewmodel.PersonaViewModel
 
 import kotlinx.android.synthetic.main.fragment_list.view.*

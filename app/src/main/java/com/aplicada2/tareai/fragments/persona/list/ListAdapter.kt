@@ -1,4 +1,4 @@
-package com.aplicada2.tareai.fragments.list
+package com.aplicada2.tareai.fragments.persona.list
 
 import android.view.LayoutInflater
 import android.view.View
