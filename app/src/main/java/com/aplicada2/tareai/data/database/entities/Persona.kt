@@ -11,5 +11,7 @@ data class Persona (
     @PrimaryKey(autoGenerate = true)
     val PersonaId: Int,
     val Nombres: String,
+    val Email: String,
+    val OcupacionId: Int,
     val Balance: Double
 ):Parcelable
