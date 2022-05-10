@@ -1,4 +1,4 @@
-package com.aplicada2.tareai.data
+package com.aplicada2.tareai.data.database.Repository
 
 import androidx.lifecycle.LiveData
 import com.aplicada2.tareai.data.database.dao.PersonaDao

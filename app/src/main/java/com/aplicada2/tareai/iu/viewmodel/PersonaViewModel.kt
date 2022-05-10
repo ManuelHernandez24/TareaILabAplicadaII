@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.aplicada2.tareai.data.PersonaRepository
-import com.aplicada2.tareai.data.database.PersonaDatabase
+import com.aplicada2.tareai.data.database.Repository.PersonaRepository
+import com.aplicada2.tareai.data.database.database.PersonaDatabase
 import com.aplicada2.tareai.data.database.entities.Persona
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

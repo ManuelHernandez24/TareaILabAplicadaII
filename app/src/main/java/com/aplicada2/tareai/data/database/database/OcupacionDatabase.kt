@@ -1,4 +1,4 @@
-package com.aplicada2.tareai.data.database
+package com.aplicada2.tareai.data.database.database
 
 import android.content.Context
 import androidx.room.Database
@@ -17,7 +17,7 @@ abstract class OcupacionDatabase: RoomDatabase() {
         @Volatile
         private var INSTANCE: OcupacionDatabase? = null
 
-        fun getDatabaseOcupacion(context: Context): OcupacionDatabase{
+        fun getDatabaseOcupacion(context: Context): OcupacionDatabase {
             val tempInstance = INSTANCE
 
             if(tempInstance != null){
