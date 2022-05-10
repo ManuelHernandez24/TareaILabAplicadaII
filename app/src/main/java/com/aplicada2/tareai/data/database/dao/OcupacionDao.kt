@@ -5,7 +5,7 @@ import androidx.room.*
 import com.aplicada2.tareai.data.database.entities.Ocupacion
 
 @Dao
-interface OcupacionDaoDao {
+interface OcupacionDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addOcupacion(ocupacion: Ocupacion)
 
