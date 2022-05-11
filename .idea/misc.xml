@@ -5,8 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.146" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/custon_row.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/custon_row.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_add.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_add_ocupacion.xml" value="0.22708333333333333" />
         <entry key="app/src/main/res/layout/fragment_list.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_update.xml" value="0.22708333333333333" />
         <entry key="app/src/main/res/menu/delete_menu.xml" value="0.1" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="24sp"
+    android:padding="30sp"
     android:id="@+id/rowLayout"
     >
 
@@ -26,18 +26,44 @@
         android:layout_marginStart="50dp"
         android:text="Victor Manuel"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintStart_toEndOf="@+id/id_txt"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/email_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginBottom="50dp"
+        android:text="Victor@gmail.com"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombres_txt"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/ocupacion_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"
+        android:text="Maestro"
+
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_txt" />
 
     <TextView
         android:id="@+id/balance_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:text="(52563.02)"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/nombres_txt"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="20dp"
+        android:text="500.90"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toEndOf="@+id/ocupacion_txt"
+        app:layout_constraintTop_toBottomOf="@+id/email_txt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

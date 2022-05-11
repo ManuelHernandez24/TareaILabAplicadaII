@@ -38,6 +38,8 @@ class ListAdapter:RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         val currentItem = personaLista[position]
         holder.itemView.id_txt.text = currentItem.PersonaId.toString()
         holder.itemView.nombres_txt.text = currentItem.Nombres
+        holder.itemView.email_txt.text = currentItem.Email
+        holder.itemView.ocupacion_txt.text = currentItem.OcupacionId.toString()
         holder.itemView.balance_txt.text = concat(currentItem.Balance.toString(), "$")
 
         holder.itemView.rowLayout.setOnClickListener{
