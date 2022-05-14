@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_listFragment_to_updateFragment"
             app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_listFragmentOcupacion"
+            app:destination="@id/listFragmentOcupacion" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
@@ -47,38 +50,44 @@
     </fragment>
     <fragment
         android:id="@+id/listFragmentOcupacion"
-        android:name="com.aplicada2.tareai.listFragmentOcupacion"
-        android:label="fragment_list_ocupacion"
+        android:name="com.aplicada2.tareai.fragments.ocupacion.list.ListFragmentOcupacion"
+        android:label="Lista de ocupaciones"
         tools:layout="@layout/fragment_list_ocupacion" >
         <action
-            android:id="@+id/action_listFragmentOcupacion_to_addFragmentOcupacion2"
+            android:id="@+id/action_listFragmentOcupacion_to_addFragmentOcupacion"
             app:destination="@id/addFragmentOcupacion" />
         <action
             android:id="@+id/action_listFragmentOcupacion_to_updateFragmentOcupacion"
             app:destination="@id/updateFragmentOcupacion" />
+        <action
+            android:id="@+id/action_listFragmentOcupacion_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragmentOcupacion"
-        android:name="com.aplicada2.tareai.addFragmentOcupacion"
-        android:label="fragment_add_ocupacion"
+        android:name="com.aplicada2.tareai.fragments.ocupacion.add.addFragmentOcupacion"
+        android:label="Registro de ocupaciones"
         tools:layout="@layout/fragment_add_ocupacion" >
+        <action
+            android:id="@+id/action_addFragmentOcupacion_to_listFragmentOcupacion"
+            app:destination="@id/listFragmentOcupacion" />
         <action
             android:id="@+id/action_addFragmentOcupacion_to_updateFragmentOcupacion"
             app:destination="@id/updateFragmentOcupacion" />
-        <action
-            android:id="@+id/action_addFragmentOcupacion_to_listFragmentOcupacion2"
-            app:destination="@id/listFragmentOcupacion" />
     </fragment>
     <fragment
         android:id="@+id/updateFragmentOcupacion"
-        android:name="com.aplicada2.tareai.updateFragmentOcupacion"
-        android:label="fragment_update_ocupacion"
+        android:name="com.aplicada2.tareai.fragments.ocupacion.update.updateFragmentOcupacion"
+        android:label="Actualizar"
         tools:layout="@layout/fragment_update_ocupacion" >
+        <action
+            android:id="@+id/action_updateFragmentOcupacion_to_listFragmentOcupacion"
+            app:destination="@id/listFragmentOcupacion" />
         <action
             android:id="@+id/action_updateFragmentOcupacion_to_addFragmentOcupacion"
             app:destination="@id/addFragmentOcupacion" />
-        <action
-            android:id="@+id/action_updateFragmentOcupacion_to_listFragmentOcupacion2"
-            app:destination="@id/listFragmentOcupacion" />
+        <argument
+            android:name="currentOcupacion"
+            app:argType="com.aplicada2.tareai.data.database.entities.Ocupacion" />
     </fragment>
 </navigation>

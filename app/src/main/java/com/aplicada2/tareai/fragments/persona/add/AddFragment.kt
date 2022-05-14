@@ -1,8 +1,6 @@
 package com.aplicada2.tareai.fragments.persona.add
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View

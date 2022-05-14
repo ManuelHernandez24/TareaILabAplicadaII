@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/ic_persona"
+        android:icon="@drawable/ic_baseline_account_box_24"
+        android:title="Persona"/>
+
+    <item
+        android:id="@+id/ic_ocupacion"
+        android:icon="@drawable/ic_baseline_work_24"
+        android:title="Ocupacion"/>
+
+
+</menu>

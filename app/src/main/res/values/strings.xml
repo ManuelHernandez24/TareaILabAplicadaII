@@ -20,4 +20,7 @@
     <string name="EliminadoConExito">ha sido eliminado correctamente.</string>
     <string name="TituloMensajeEliminar">Estás a punto de elimar a </string>
     <string name="MensajeConfirmacionEliminar">Estás seguro de que quieres eliminar a </string>
+
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
 </resources>

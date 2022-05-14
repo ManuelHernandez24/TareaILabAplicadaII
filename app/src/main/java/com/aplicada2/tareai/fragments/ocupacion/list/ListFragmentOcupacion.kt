@@ -1,64 +1,57 @@
-package com.aplicada2.tareai.fragments.persona.list
+package com.aplicada2.tareai.fragments.ocupacion.list
 
-import android.app.AlertDialog
 import android.os.Bundle
-import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.aplicada2.tareai.R
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.aplicada2.tareai.fragments.ocupacion.list.ListFragmentOcupacion
+import com.aplicada2.tareai.R
+import com.aplicada2.tareai.fragments.ocupacion.list.ListAdapterOcupacion
+import com.aplicada2.tareai.iu.viewmodel.OcupacionViewModel
 import com.aplicada2.tareai.iu.viewmodel.PersonaViewModel
-import kotlinx.android.synthetic.main.fragment_list.*
-
 import kotlinx.android.synthetic.main.fragment_list.view.*
+import kotlinx.android.synthetic.main.fragment_list_ocupacion.view.*
 
+class ListFragmentOcupacion : Fragment() {
 
-
-class ListFragment : Fragment() {
-
-    private val listFragmentOcupacion = ListFragmentOcupacion()
-
-    private lateinit var mPersonaView: PersonaViewModel
+    private lateinit var mOcupacionViewModel: OcupacionViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_list_ocupacion, container, false)
 
         //recyclerView
-        val adapter = ListAdapter()
-        val recyclerView = view.recyclerview
+        val adapter = ListAdapterOcupacion()
+        val recyclerView = view.recyclerviewOcupacion
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         //PersonaViewModel
-        mPersonaView = ViewModelProvider(this).get(PersonaViewModel::class.java)
-        mPersonaView.readAllData.observe(viewLifecycleOwner, Observer { persona ->
-            adapter.setData(persona)
+        mOcupacionViewModel = ViewModelProvider(this).get(OcupacionViewModel::class.java)
+        mOcupacionViewModel.readAllData.observe(viewLifecycleOwner, Observer { ocupacion ->
+            adapter.setData(ocupacion)
         })
 
-        view.floatingActionButton.setOnClickListener{
-            findNavController().navigate(R.id.action_listFragment_to_addFragment)
+        view.floatingActionButtonOcupacion.setOnClickListener{
+            findNavController().navigate(R.id.action_listFragmentOcupacion_to_addFragmentOcupacion)
         }
 
-        view.floatingActionButtonO.setOnClickListener{
-            findNavController().navigate(R.id.action_listFragment_to_listFragmentOcupacion)
+        view.floatingActionButtonP.setOnClickListener{
+            findNavController().navigate(R.id.action_listFragmentOcupacion_to_listFragment)
         }
-
-
 
         //Menu para eliminar todas las personas registradas
         setHasOptionsMenu(true)
 
         return view
     }
-
 /*
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.delete_menu, menu)
@@ -87,4 +80,5 @@ class ListFragment : Fragment() {
         builder.create().show()
     }
     */
+
 }

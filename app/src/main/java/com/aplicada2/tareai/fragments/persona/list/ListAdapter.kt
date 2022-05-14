@@ -10,8 +10,6 @@ import com.aplicada2.tareai.data.database.entities.Persona
 import kotlinx.android.synthetic.main.custon_row.view.*
 
 
-
-
 class ListAdapter:RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
     private var personaLista = emptyList<Persona>()
